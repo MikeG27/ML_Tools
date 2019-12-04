@@ -5,6 +5,7 @@ from scipy import stats
 def remove_outliers_STD(df, treshold=3):
     """
     Remove preprocessing from pandas dataframe based on standard deviation indicator.
+    We asssume that distribution is gaussian.
     :param df: Pandas dataFrame
     :param treshold: standard deviation treshold
     :return df_out : Pandas dataframe without preprocessing

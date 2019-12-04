@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-from visualization.corelation import Heatmap
+from visualization.correlation import Heatmap
 from visualization.distribution import distribution_analyzer
 
 
