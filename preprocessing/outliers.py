@@ -2,9 +2,9 @@ import numpy as np
 from scipy import stats
 
 
-def remove_outliers_STD(df, treshold=3):
+def remove_outliers_std(df, treshold=3):
     """
-    Remove preprocessing from pandas dataframe based on standard deviation indicator.
+    Remove outiliers from pandas dataframe based on standard deviation indicator.
     We asssume that distribution is gaussian.
     :param df: Pandas dataFrame
     :param treshold: standard deviation treshold
@@ -16,9 +16,9 @@ def remove_outliers_STD(df, treshold=3):
     return df_out
 
 
-def remove_outliers_IQR(df, IQR_mul=1.5):
+def remove_outliers_iqr(df, IQR_mul=1.5):
     """
-    Remove preprocessing from pandas dataframe based on IQR indicator.
+    Remove outliers from pandas dataframe based on IQR indicator.
     :param df: Pandas dataFrame
     :param IQR_mul : IQR_mult > 1.5 - normal preprocessing, IQR_mul > 3 - extreme preprocessing
     :return df_out :
