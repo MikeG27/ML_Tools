@@ -13,7 +13,7 @@ def missing_values_counter(df):
 
     print("Your selected dataframe has " + str(df.shape[1]) + " columns and " + str(
         df.shape[0]) + ' Rows.\n''There are ' + str(
-        missing_data.shape[0]) + f" columns that have missing values above {threshold * 100}%")
+        missing_data.shape[0]))
 
     return missing_data
 
@@ -39,7 +39,7 @@ def knn_imputer(df,columns,neighbours = 2):
     """
     Imputation for completing missing values using k-Nearest Neighbors.
     Each sample’s missing values are imputed using the mean value from n_neighbors nearest neighbors found in the training set.
-     Two samples are close if the features that neither is missing are close.
+    Two samples are close if the features that neither is missing are close.
     """
     imputer = KNNImputer(n_neighbors=neighbours)
     df[columns] = imputer.fit_transform(df[columns])
