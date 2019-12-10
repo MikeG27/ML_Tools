@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from sklearn.impute import KNNImputer
 
 def missing_values_counter(df):
     total = df.isnull().sum().sort_values(ascending=False)
@@ -34,4 +35,12 @@ def missing_imputer(df, columns, strategy="most_frequent"):
     df[columns] = imputer.fit_transform(df[columns])
     return imputer
 
-
+def knn_imputer(df,columns,neighbours = 2):
+    """
+    Imputation for completing missing values using k-Nearest Neighbors.
+    Each sample’s missing values are imputed using the mean value from n_neighbors nearest neighbors found in the training set.
+     Two samples are close if the features that neither is missing are close.
+    """
+    imputer = KNNImputer(n_neighbors=neighbours)
+    df[columns] = imputer.fit_transform(df[columns])
+    return imputer
